@@ -1,14 +1,11 @@
 import pytest
 from KataRangePack import RangeClass
 
-c1 = RangeClass(2, 6)
-c2 = RangeClass(2, 6)
-c3 = RangeClass(3, 7)
-c4 = RangeClass(4, 5)
-c5 = RangeClass(7, 10)
-c6 = RangeClass(2, 5)
-c7 = RangeClass(2, 10)
-c8 = RangeClass(3, 5)
+valid1 = RangeClass()
+valid2 = RangeClass()
+
+def test_range_Validation():
+    assert RangeClass().range_validation("(2,3)") == True
 
 def test_RangeContains():
     assert c1.Contains(2) == True

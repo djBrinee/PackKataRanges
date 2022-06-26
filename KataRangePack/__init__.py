@@ -41,7 +41,7 @@ class RangeClass:
                 if(i == j):
                     choice = True
                 else:
-                    choide = False
+                    choice = False
         return choice
                 
 

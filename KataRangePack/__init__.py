@@ -2,24 +2,25 @@
 
 from sys import setswitchinterval
 
-rango = input("ingrese el rango a poner: ")
-
 class RangeClass:
     def __init__(self, range):
         self.range = range
     
-    firstInterval = range[0]
-    firstNo = range[1:range.find(',')]
-    secNo = range[range.find(',') + 1: -1]
-    secInterval = range[-1]
+    firstInterval = str(range)[0]
+    firstNo = str(range)[1:str(range).find(',')]
+    secNo = str(range)[str(range).find(',') + 1: -1]
+    secInterval = str(range)[-1]
 
     def range_validation(self):
-        if(firstInterval == '(' or firstInterval == '['):
-            answer = True
-        elif(secInterval == ')' or secInterval == ']'):
-            answer = True
+        valid1 = (self.firstInterval == '(' or self.firstInterval == '[')
+        valid2 = (self.secInterval == ')' or self.secInterval == ']')
+        valid3 = (self.firstNo.isdigit() and self.secNo.isdigit())
+        valid4 = (self.firstNo <= self.secNo)
+        if(valid1 and valid2 and valid3 and valid4):
+            return True
         else:
-            answer = False
+            return False
+
 
     def Contains(self, value):
         t1 = False
@@ -61,5 +62,7 @@ class RangeClass:
                 else:
                     choice = False
         return choice
+
+print(RangeClass("(1,2)").range_validation())
                 
 

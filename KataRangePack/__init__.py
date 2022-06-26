@@ -1,5 +1,9 @@
 
 
+from sys import setswitchinterval
+
+rango = input("ingrese el rango a poner: ")
+
 class RangeClass:
     def __init__(self, range):
         self.range = range
@@ -12,8 +16,10 @@ class RangeClass:
     def range_validation(self):
         if(firstInterval == '(' or firstInterval == '['):
             answer = True
-
-
+        elif(secInterval == ')' or secInterval == ']'):
+            answer = True
+        else:
+            answer = False
 
     def Contains(self, value):
         t1 = False

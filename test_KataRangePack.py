@@ -2,8 +2,20 @@ import pytest
 from KataRangePack import RangeClass
 
 obj1 = RangeClass("(2,3)")
-def test_range_Validation():
+obj2 = RangeClass("[2,5)")
+def test_range_Validationobj1():
     assert obj1.range_validation() == True
+
+def test_splitobj1():
+    assert obj1.split() == ['(', '2', '3', ')']
+
+def test_range_Validationobj2():
+    assert obj2.range_validation() == True
+
+def test_splitobj2():
+    assert obj2.split() == ['[', '2', '5', ')']
+
+
 
 # def test_RangeContains():
 #     assert c1.Contains(2) == True

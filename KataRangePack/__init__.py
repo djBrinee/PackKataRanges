@@ -1,22 +1,20 @@
-
-
-from sys import setswitchinterval
-
 class RangeClass:
     def __init__(self, range):
         self.range = range
     
-    firstInterval = str(range)[0]
-    firstNo = str(range)[1:str(range).find(',')]
-    secNo = str(range)[str(range).find(',') + 1: -1]
-    secInterval = str(range)[-1]
+    def split(self):
+        firstInterval = self.range[0]
+        firstNo = self.range[1:self.range.find(',')]
+        secNo = self.range[self.range.find(',') + 1: -1]
+        secInterval = self.range[-1]
+        return [firstInterval, firstNo, secNo, secInterval]
     
     def range_validation(self):
-        valid1 = (self.firstInterval == '(' or self.firstInterval == '[')
-        valid2 = (self.secInterval == ')' or self.secInterval == ']')
-        valid3 = (self.firstNo.isdigit() and self.secNo.isdigit())
-        valid4 = (self.firstNo <= self.secNo)
-        if(valid1 and valid2 and valid3 and valid4):
+        valid1 = (self.split()[0] == '(' or self.split()[0] == '[')
+        valid2 = (self.split()[3] == ')' or self.split()[3] == ']')
+        valid3 = (self.split()[1].isdigit() and self.split()[2].isdigit())
+        valid4 = (int(self.split()[1]) <= int(self.split()[2]))
+        if(valid1 == True and valid2 == True and valid3 == True and valid4 == True):
             return True
         else:
             return False
@@ -62,5 +60,5 @@ class RangeClass:
                     choice = False
         return choice
 
-print(RangeClass("(1,2)").range_validation())
+
 

@@ -10,7 +10,7 @@ class RangeClass:
     firstNo = str(range)[1:str(range).find(',')]
     secNo = str(range)[str(range).find(',') + 1: -1]
     secInterval = str(range)[-1]
-
+    
     def range_validation(self):
         valid1 = (self.firstInterval == '(' or self.firstInterval == '[')
         valid2 = (self.secInterval == ')' or self.secInterval == ']')
@@ -20,7 +20,6 @@ class RangeClass:
             return True
         else:
             return False
-
 
     def Contains(self, value):
         t1 = False
@@ -64,5 +63,4 @@ class RangeClass:
         return choice
 
 print(RangeClass("(1,2)").range_validation())
-                
 

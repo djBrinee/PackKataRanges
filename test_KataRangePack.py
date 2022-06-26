@@ -1,5 +1,5 @@
 import pytest
-from KataRange import RangeClass
+from KataRangePack import RangeClass
 
 c1 = RangeClass(2, 6)
 c2 = RangeClass(2, 6)

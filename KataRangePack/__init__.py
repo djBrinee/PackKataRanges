@@ -1,7 +1,19 @@
+
+
 class RangeClass:
-    def __init__(self, first, last):
-        self.first = first
-        self.last = last
+    def __init__(self, range):
+        self.range = range
+    
+    firstInterval = range[0]
+    firstNo = range[1:range.find(',')]
+    secNo = range[range.find(',') + 1: -1]
+    secInterval = range[-1]
+
+    def range_validation(self):
+        if(firstInterval == '(' or firstInterval == '['):
+            answer = True
+
+
 
     def Contains(self, value):
         t1 = False

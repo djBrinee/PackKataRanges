@@ -5,7 +5,7 @@ valid1 = RangeClass()
 valid2 = RangeClass()
 
 def test_range_Validation():
-    assert RangeClass().range_validation("(2,3)") == True
+    assert RangeClass("(2,3)").range_validation() == True
 
 def test_RangeContains():
     assert c1.Contains(2) == True

@@ -3,6 +3,8 @@ from KataRangePack import RangeClass
 
 obj1 = RangeClass("(2,3)")
 obj2 = RangeClass("[2,5)")
+obj3 = RangeClass("[3,6]")
+
 def test_range_Validationobj1():
     assert obj1.range_validation() == True
 
@@ -15,7 +17,11 @@ def test_range_Validationobj2():
 def test_splitobj2():
     assert obj2.split() == ['[', '2', '5', ')']
 
-
+def test_LenghtRange():
+    assert obj2.LenghtRange() == range(2,5)
+    
+def test_LenghtRange2():
+    assert obj3.LenghtRange() == range(3,7)
 
 # def test_RangeContains():
 #     assert c1.Contains(2) == True

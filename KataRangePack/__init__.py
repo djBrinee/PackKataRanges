@@ -1,3 +1,6 @@
+from attr import s
+
+
 class RangeClass:
     def __init__(self, range):
         self.range = range
@@ -18,6 +21,15 @@ class RangeClass:
             return True
         else:
             return False
+        
+    def LenghtRange(self):
+        L1 = int(self.split()[1])
+        L2 = int(self.split()[2])
+        if(self.split()[0] == '('):
+            L1 += 1
+        if(self.split()[3] == ']'):
+            L2 += 1
+        return range(L1, L2)
 
     def Contains(self, value):
         t1 = False

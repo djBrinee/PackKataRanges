@@ -30,7 +30,16 @@ class RangeClass:
         if(self.split()[3] == ']'):
             L2 += 1
         return range(L1, L2)
-
+    
+    def EndPoints(self):
+        L1 = int(self.split()[1])
+        L2 = int(self.split()[2])
+        if(self.split()[0] == '('):
+            L1 += 1
+        if(self.split()[3] == ']'):
+            L2 += 1
+        return "{" + str(L1) + "," + str(L2 - 1) + "}"
+    
     def allPoints(self):
         result = "{"
         var = self.LenghtRange()
@@ -41,44 +50,26 @@ class RangeClass:
                 result += str(i)
         result += '}'
         return result
-
-    def Contains(self, value):
-        t1 = False
-        var = range(self.first, self.last)
-        for i in var:
-            if(i == value):
-                t1 = True
-        return t1
-
     
-    def EndPoints(self):
-        L1 = int(self.split()[1])
-        L2 = int(self.split()[2])
-        if(self.split()[0] == '('):
-            L1 += 1
-        if(self.split()[3] == ']'):
-            L2 += 1
-        return "{" + str(L1) + "," + str(L2 - 1) + "}"
-
-
     def Equals(self, other: 'RangeClass'):
-        var1 = range(self.first, self.last)
-        var2 = range(other.first, other.last)
+        var1 = self.LenghtRange()
+        var2 = other.LenghtRange()
         if(var1 == var2):
             return True
         else:
             return False
-
+    
     def overlapsRange(self, other: 'RangeClass'):
         choice = False
-
-        for i in range(self.first, self.last):
-            for j in range(other.first, other.last):
+        var1 = self.LenghtRange()
+        var2 = other.LenghtRange()
+        for i in var1:
+            for j in var2:
                 if(i == j):
                     choice = True
-                else:
-                    choice = False
         return choice
+    
+    
 
 
 

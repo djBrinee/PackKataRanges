@@ -1,11 +1,12 @@
 import pytest
 from KataRangePack import RangeClass
 
-
 obj1 = RangeClass("(2,3)")
 obj2 = RangeClass("[2,5)")
 obj3 = RangeClass("[3,6]")
 obj4 = RangeClass("[4,8)")
+obj5 = RangeClass("[3,6]")
+obj6 = RangeClass("(2,3)")
 
 def test_range_Validationobj1():
     assert obj1.range_validation() == True
@@ -37,6 +38,14 @@ def test_EndPoints():
 def test_EndPoints2():
     assert obj3.EndPoints() == '{3,6}' 
 
+def test_Equals1():
+    assert obj3.Equals(obj5) == True
+
+def test_Equals2():
+    assert obj6.Equals(obj1) == True
+    
+def test_Overlap1():
+    assert obj2.overlapsRange(obj3) == True
 
 # def test_RangeContains():
 #     assert c1.Contains(2) == True

@@ -31,6 +31,17 @@ class RangeClass:
             L2 += 1
         return range(L1, L2)
 
+    def allPoints(self):
+        result = "{"
+        var = self.LenghtRange()
+        for i in var:
+            if i < int(self.split()[2]) - 1 :
+                result += str(i) + ","
+            else:
+                result += str(i)
+        result += '}'
+        return result
+
     def Contains(self, value):
         t1 = False
         var = range(self.first, self.last)
@@ -39,18 +50,15 @@ class RangeClass:
                 t1 = True
         return t1
 
-    def GetAllPoints(self):
-        result = ""
-        var = range(self.first, self.last)
-        for i in var:
-            if i < self.last - 1 :
-                result += str(i) + ","
-            else:
-                result += str(i)
-        return result
     
     def EndPoints(self):
-        return str(self.first) + "," + str(self.last-1)
+        L1 = int(self.split()[1])
+        L2 = int(self.split()[2])
+        if(self.split()[0] == '('):
+            L1 += 1
+        if(self.split()[3] == ']'):
+            L2 += 1
+        return "{" + str(L1) + "," + str(L2 - 1) + "}"
 
 
     def Equals(self, other: 'RangeClass'):

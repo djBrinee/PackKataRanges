@@ -1,9 +1,11 @@
 import pytest
 from KataRangePack import RangeClass
 
+
 obj1 = RangeClass("(2,3)")
 obj2 = RangeClass("[2,5)")
 obj3 = RangeClass("[3,6]")
+obj4 = RangeClass("[4,8)")
 
 def test_range_Validationobj1():
     assert obj1.range_validation() == True
@@ -22,6 +24,19 @@ def test_LenghtRange():
     
 def test_LenghtRange2():
     assert obj3.LenghtRange() == range(3,7)
+
+def test_allPoints():
+    assert obj4.allPoints() == '{4,5,6,7}'
+
+def test_allPoints2():
+    assert obj2.allPoints() == '{2,3,4}'
+
+def test_EndPoints():
+    assert obj2.EndPoints() == '{2,4}' 
+
+def test_EndPoints2():
+    assert obj3.EndPoints() == '{3,6}' 
+
 
 # def test_RangeContains():
 #     assert c1.Contains(2) == True

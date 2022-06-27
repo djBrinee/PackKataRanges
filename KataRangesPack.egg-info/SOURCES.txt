@@ -1,0 +1,7 @@
+LICENCE.txt
+setup.py
+KataRangePack/__init__.py
+KataRangesPack.egg-info/PKG-INFO
+KataRangesPack.egg-info/SOURCES.txt
+KataRangesPack.egg-info/dependency_links.txt
+KataRangesPack.egg-info/top_level.txt

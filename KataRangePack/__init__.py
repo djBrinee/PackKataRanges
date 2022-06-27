@@ -1,6 +1,3 @@
-from attr import s
-
-
 class RangeClass:
     def __init__(self, range):
         self.range = range
